@@ -16,7 +16,6 @@ const { join } = require('path');
 
 let { readdirSync } = require("fs");
 
-//const fs = require("fs");
 
 const { GiveawaysManager } = require('discord-giveaways');
 
