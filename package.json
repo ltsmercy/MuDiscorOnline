@@ -12,6 +12,7 @@
   "dependencies": {
     "chance": "^1.1.7",
     "desandro-matches-selector": "^2.0.2",
+    "discord-giveaways": "^4.2.1",
     "discord.js": "^12.4.1",
     "ev-emitter": "^1.1.1",
     "express": "^4.17.1",

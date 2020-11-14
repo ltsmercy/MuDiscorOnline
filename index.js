@@ -1,11 +1,6 @@
 
 const express = require("express");
 const app = express();
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-];
 app.use(express.static("public"));
 app.get("/", (req, res) => res.sendFile(__dirname + "/views/index.html"));
 const listener = app.listen(process.env.PORT, () =>
@@ -17,10 +12,24 @@ const Discord = require("discord.js");
 const client = new Discord.Client({ ws: { intents: 32767, properties: { $browser: 'Discord iOS' }}});
 const config = require("./config.json");
 
+const { join } = require('path');
+
 let { readdirSync } = require("fs");
 
 //const fs = require("fs");
 
+const { GiveawaysManager } = require('discord-giveaways');
+
+client.giveawaysManager = new GiveawaysManager(client, {
+    storage: "./giveaways.json",
+    updateCountdownEvery: 5000,
+    default: {
+        botsCanWin: false,
+        exemptPermissions: [],
+        embedColor: "RANDOM",
+        reaction: "🎉"
+    }
+});
 
 client.comandos = new Discord.Collection();
 client.eventos = new Discord.Collection();
