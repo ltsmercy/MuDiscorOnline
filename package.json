@@ -1,0 +1,27 @@
+{
+  "name": "FlashyAquaBlogclient",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.1.7",
+    "desandro-matches-selector": "^2.0.2",
+    "discord.js": "^12.4.1",
+    "ev-emitter": "^1.1.1",
+    "express": "^4.17.1",
+    "fizzy-ui-utils": "^2.0.7",
+    "get-size": "^2.0.3",
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.5.1",
+    "masonry-layout": "^4.2.2",
+    "moment": "^2.29.1",
+    "ms": "^2.1.2",
+    "outlayer": "^2.1.1"
+  }
+}
