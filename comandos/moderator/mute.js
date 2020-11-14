@@ -4,11 +4,13 @@ module.exports = (client, message, args) => {
   message.delete();
   let member = message.mentions.members.first();
   const razon = args.slice(1).join(" ");
-  let perms = message.member.hasPermission("KICK_MEMBERS");
+  let perms = message.member.hasPermission("MANAGE_MESSAGES");
   if (!perms)
     return message.channel
       .send("**Oops.** No tienes Permisos para usar este comando.")
       .then(m => m.delete({ timeout: 5000 }));
+const hight = message.member.roles.highest.comparePositionTo(member.roles.highest) >= 0
+if (!hight) return message.channel.send("No puedes <@&770489938910642176> un usuario con mayor o igual nivel jerarquía que tú.").then(m => m.delete({ timeout: 5000 }));  
   let role = message.guild.roles.cache.find(r => r.id === "770489938910642176");
   if (message.mentions.users.size < 1)
     return message

@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = (client, message, args) => {
   message.delete();
   const user = message.mentions.users.first();
-  if (!message.member.hasPermission("MANAGE_EMOJIS"))
+  if (!message.member.hasPermission("MANAGE_MESSAGES"))
     return message
       .reply("**Oops.** No tienes Permisos para usar este comando.")
       .then(m => m.delete({ timeout: 2000 }));

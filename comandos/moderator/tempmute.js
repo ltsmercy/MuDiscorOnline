@@ -5,9 +5,11 @@ module.exports = async (client, message, args) => {
   message.delete();
 
 
-        if(message.member.hasPermission('MANAGE_MESSAGES')) {
+    if(message.member.hasPermission('MANAGE_MESSAGES')) {
             let member = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
-            if(!member) return message.reply("**Oops**. Debe mencionar a un usuario para <@&770489938910642176>").then(m => m.delete({ timeout: 5000 }));
+    if(!member) return message.reply("**Oops**. Debe mencionar a un usuario para <@&770489938910642176>").then(m => m.delete({ timeout: 5000 }));
+	const hight = message.member.roles.highest.comparePositionTo(member.roles.highest) >= 0
+	if (!hight) return message.channel.send("No puedes <@&770489938910642176> un usuario con mayor o igual nivel jerarquía que tú.").then(m => m.delete({ timeout: 5000 }));
             let mainrole = message.guild.roles.cache.find(role => role.id === "770489938910642176");
             let role = message.guild.roles.cache.find(role => role.id === "770489938910642176");
 
