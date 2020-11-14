@@ -8,8 +8,6 @@ module.exports = async (client, message, args) => {
     if(message.member.hasPermission('MANAGE_MESSAGES')) {
             let member = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
     if(!member) return message.reply("**Oops**. Debe mencionar a un usuario para <@&770489938910642176>").then(m => m.delete({ timeout: 5000 }));
-	const hight = message.member.roles.highest.comparePositionTo(member.roles.highest) >= 0
-	if (!hight) return message.channel.send("No puedes <@&770489938910642176> un usuario con mayor o igual nivel jerarquía que tú.").then(m => m.delete({ timeout: 5000 }));
             let mainrole = message.guild.roles.cache.find(role => role.id === "770489938910642176");
             let role = message.guild.roles.cache.find(role => role.id === "770489938910642176");
 
@@ -22,7 +20,10 @@ module.exports = async (client, message, args) => {
 
 			const razon = args.slice(2).join(" ");
 			if(!razon) return message.reply("**Oops**. Escriba una razón de <@&770489938910642176>").then(m => m.delete({ timeout: 5000 }));
-			
+	
+	let hight = message.mentions.members.first() || 
+            message.guild.members.resolve(args[0])
+    if (!hight.roles.highest.comparePositionTo(member.roles.highest) >= 0) return message.reply("No puedes advertir a un usuario con mayor o igual nivel jerarquía que tú.").then(m => m.delete({ timeout: 5000 })); 		
 
             member.roles.remove(mainrole.id)
             member.roles.add(role.id);

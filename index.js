@@ -40,7 +40,6 @@ for(const subcarpet of readdirSync('./comandos/')) { //aqui haras que lea la car
   let fileName = file.substring(0, file.length - 3);
 let fileContents = require(`./comandos/${subcarpet}/${file}`);
   client.comandos.set(fileName, fileContents);
-  console.log(fileName+ "👾 | fue cargado correctamente")
   }
     	
     }

@@ -4,14 +4,17 @@ const ms = require("ms");
 
 module.exports = async (client, message, args) => {
   message.delete();
+
   let user = message.mentions.users.first();
   let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
   if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("**Oops.** No tienes Permisos para usar este comando.").then(m => m.delete({ timeout: 5000 }));
-  const hight = message.member.roles.highest.comparePositionTo(member.roles.highest) >= 0
-	if (!hight) return message.channel.send("No puedes Sancionar un usuario con mayor o igual nivel jerarquía que tú.").then(m => m.delete({ timeout: 5000 }));
    if(!user) return message.reply("**Oops**. Debe mencionar a un usuario.").then(m => m.delete({ timeout: 5000 }));
   const razon = args.slice(1).join(" ");
 	if(!razon) return message.reply("**Oops**. Escriba una razón").then(m => m.delete({ timeout: 5000 }));
+   let member = message.mentions.members.first() || 
+  message.guild.members.resolve(args[0])
+  if (!member.roles.highest.comparePositionTo(member.roles.highest) >= 0) return message.reply("No puedes advertir a un usuario con mayor o igual nivel jerarquía que tú.").then(m => m.delete({ timeout: 5000 }));
+
 
   if (!warns[`${user.tag}, ${user.id}`])
     warns[`${user.tag}, ${user.id}`] = {
@@ -50,7 +53,7 @@ module.exports = async (client, message, args) => {
       if (e) return;
     });
 
-  if (warns[`${user.tag}, ${message.guild.id}`].warns == 2) {
+  if (warns[`${user.tag}, ${user.id}`].warns == 2) {
     let muteRole = message.guild.roles.cache.find(
       r => r.id === "770489938910642176"
     );
@@ -63,7 +66,7 @@ module.exports = async (client, message, args) => {
     }, ms(mutetime));
   }
 
-  if (warns[`${user.tag}, ${message.guild.id}`].warns == 4) {
+  if (warns[`${user.tag}, ${user.id}`].warns == 4) {
     let muteRole = message.guild.roles.cache.find(
       r => r.id === "770489938910642176"
     );
@@ -76,7 +79,7 @@ module.exports = async (client, message, args) => {
     }, ms(mutetime));
   }
 
-  if (warns[`${user.tag}, ${message.guild.id}`].warns == 7) {
+  if (warns[`${user.tag}, ${user.id}`].warns == 7) {
     let muteRole = message.guild.roles.cache.find(
       r => r.id === "770489938910642176"
     );
@@ -89,15 +92,15 @@ module.exports = async (client, message, args) => {
     }, ms(mutetime));
   }
 
-  if (warns[`${user.tag}, ${message.guild.id}`].warns == 10) {
-    message.guild.member(user).kick(reason);
+  if (warns[`${user.tag}, ${user.id}`].warns == 10) {
+    message.guild.member(user).kick(razon);
   }
 
-  if (warns[`${user.tag}, ${message.guild.id}`].warns == 13) {
-    message.guild.member(user).kick(reason);
+  if (warns[`${user.tag}, ${user.id}`].warns == 13) {
+    message.guild.member(user).kick(razon);
   }
 
-  if (warns[`${user.tag}, ${message.guild.id}`].warns == 15) {
-    message.guild.member(user).ban(reason);
+  if (warns[`${user.tag}, ${user.id}`].warns == 15) {
+    message.guild.member(user).ban(razon);
   }
 };
