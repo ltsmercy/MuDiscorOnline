@@ -24,7 +24,7 @@
     "jquery": "^3.5.1",
     "masonry-layout": "^4.2.2",
     "meowdb": "^2.2.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.5.33",
     "ms": "^2.1.2",
     "node-emoji-clock": "^0.1.0",
