@@ -4,7 +4,7 @@ module.exports = (client, message, args) => {
   message.delete();
   let permisos = message.member.hasPermission("ADMINISTRATOR");
   if (!permisos) return message.reply("No tienes permisos");
-  const mencionado = message.mentions.users.first() || message.author.tag;
+  const mencionado = message.mentions.users.first() || message.author;
   if (!mencionado) return message.reply("No ha mencionando a ningún miembro.");
   let id = mencionado.id;
   let texto = args.slice(1).join(" ");

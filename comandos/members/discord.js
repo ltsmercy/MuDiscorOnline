@@ -10,19 +10,19 @@ module.exports = (client, message, args) => {
     .setAuthor(server.name, server.iconURL())
     .addField("ID", server.id, false)
     .addField("Region", server.region, false)
-    .addField("Creado el", server.joinedAt.toDateString(), false)
+    .addField("Created the", server.joinedAt.toDateString(), false)
     .addField(
-      "Dueño del Servidor",
+      "Server Owner",
       `${server.owner}` + " (" + server.owner.user.id + ")",
       false
     )
-    .addField("Miembros", server.memberCount, false)
+    .addField("Members", server.memberCount, false)
     .addField("Roles", server.roles.cache.size, false)
-	.addField('Booster',message.guild.premiumSubscriptionCount.toString())
+	.addField('Boost',message.guild.premiumSubscriptionCount.toString())
 	.addField("Bot",`${message.guild.members.cache.filter(m => m.user.bot).size}`)
     .setColor("RANDOM")
     .setFooter(
-      "Samplicio RolePlay 2020. Derechos Reservados",
+      "Europe Origin 2. All Right Reserve",
       "https://i.imgur.com/3Oqs22P.gif"
     )
     .setTimestamp();

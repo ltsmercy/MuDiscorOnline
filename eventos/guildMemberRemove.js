@@ -7,8 +7,8 @@ module.exports = (client, member) => {
   );
   const embed = new Discord.MessageEmbed()
     .setAuthor(`✨ ${member.user.tag}`, member.user.displayAvatarURL())
-    .setDescription(`${member} ha salido de 
-	__**Mu Online Discord**__`)
+    .setDescription(`${member} has come out of 
+	__**Europe Origin 2**__`)
     .setThumbnail(member.user.displayAvatarURL());
 
   webhook.send(embed);

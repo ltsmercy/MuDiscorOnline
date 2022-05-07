@@ -15,21 +15,20 @@ module.exports = (client, message, args) => {
       .send(`Tienes que poner una encuesta que enviar.`)
       .then(m => m.delete({ timeout: 4000 }));
   let embedSugerencia = new Discord.MessageEmbed()
-    .setAuthor("Mu Online Discord - Encuesta", "https://i.imgur.com/QslgD5I.gif")
+    .setAuthor("Europe Mu Origin - POLL Started", "https://i.imgur.com/QslgD5I.gif")
     .setThumbnail("https://i.imgur.com/7ZRavak.gif")
     .setTimestamp()
     .setFooter(
-      "Mu Online Discord 2020. Derechos Reservados",
-      "https://i.imgur.com/NuU3tGp.gif"
+      "Europe MU Origin 2022. ALL RIGHT RESERVED", "https://i.imgur.com/NuU3tGp.gif"
     )
     .addField(
-      `Encuesta:`,
+      `Poll Ready:`,
       `${suggestion}\n
-***__¡Vota!__***`
+***__¡Vote!__***`
     )
     .setColor("RANDOM");
   message.channel.send(embedSugerencia).then(async msg => {
-    await msg.react("718521906420252735");
-    await msg.react("718521906491293756");
+    await msg.react("771218886447333399");
+    await msg.react("771218889919954974");
   });
 };

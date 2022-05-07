@@ -21,20 +21,23 @@ const webhook = new Discord.WebhookClient(
   
   let embed = new Discord.MessageEmbed()
     .setAuthor(
-      " Bienvenido " + member.guild.name,
+      " Welcome to " + member.guild.name,
       "https://i.imgur.com/QslgD5I.gif"
     )
     .setDescription(
-      `Hey ${member}, Bienvenid@ a la comunidad **Mu Online Discord**. Puedes revisar nuestros canales <#770489978169982996> y <#770489978760855562>. 
+      `hey ${member}, Welcome to the **Europe Origin 2** community. You can check our channels
+ <#770489978169982996>
+ and <#774374358285549568>.
 
-     __**Recuerda no ser TOXICO.**__.`
+
+ __ ** Remember not to be TOXIC. ** __`
     )
     .setFooter(
-      "Mu Online Dsicord 2020. Derechos Reservados",
+      "Europe Origin 2. All Right Reserved",
       "https://i.imgur.com/NuU3tGp.gif"
     )
     .setThumbnail(member.user.displayAvatarURL())
-    .setImage('https://i.imgur.com/0GPUT0d.gif')
+    .setImage('')
     .setTimestamp ()
     .setColor("RANDOM");
   webhook.send(embed);
@@ -53,26 +56,26 @@ const webhook = new Discord.WebhookClient(
     let segundos = Math.floor((ms % (1000 * 60)) / 1000);
 
     let final = "";
-    if (años > 0) final += años > 1 ? `${años} años, ` : `${años} año, `;
-    if (meses > 0) final += meses > 1 ? `${meses} meses, ` : `${meses} mes, `;
-    if (dias > 0) final += dias > 1 ? `${dias} dias, ` : `${dias} dia, `;
-    if (horas > 0) final += horas > 1 ? `${horas} horas, ` : `${horas} hora, `;
+    if (años > 0) final += años > 1 ? `${años} years, ` : `${años} year, `;
+    if (meses > 0) final += meses > 1 ? `${meses} mounths, ` : `${meses} mounth, `;
+    if (dias > 0) final += dias > 1 ? `${dias} days, ` : `${dias} day, `;
+    if (horas > 0) final += horas > 1 ? `${horas} hours, ` : `${horas} hour, `;
     if (minutos > 0)
-      final += minutos > 1 ? `${minutos} minutos y ` : `${minutos} minuto y `;
+      final += minutos > 1 ? `${minutos} minutes and ` : `${minutos} minute and `;
     if (segundos > 0)
-      final += segundos > 1 ? `${segundos} segundos.` : `${segundos} segundo.`;
+      final += segundos > 1 ? `${segundos} seconds.` : `${segundos} second.`;
     return final;
   }
 
   const embed2 = new Discord.MessageEmbed()
     .setAuthor(`✨ ${member.user.tag}`, member.user.displayAvatarURL())
-    .setDescription(`${member} ha ingresado a __**Mu Online Discord**__`)
+    .setDescription(`${member} you have entered __**Europe Origin 2**__`)
     .setThumbnail(member.user.displayAvatarURL())
     .addField(
-      "Fecha de registro",
+      "Registration date",
       `${moment(member.user.createdTimestamp).format("LL")}`)
     .addField(
-      "Tiempo de registro",
+      "Registration time",
       T_convertor(Math.floor(Date.now()) - member.user.createdTimestamp)
     )
 	.setColor("RANDOM");

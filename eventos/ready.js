@@ -9,11 +9,10 @@ module.exports = (client) => {
   setInterval(function() {
 
     let estados = [
-    "https://web.mudiscord.online/",
-     `Tenemos ${client.users.cache.size} Usuarios en nuestro servidor.`,
-    `Estoy conectado en ${client.guilds.cache.size} servidor.`,
-    "Usa !comandos",
-    "Mu Online Discord 2020. Derecho reservados",
+    "http://eu.muoriginrenegade.com/signin",
+     `We have ${client.users.cache.size} users on our server.`,
+    "Free to Play",
+    "Europe Origin 2 - All Right Reserved",
     ];
 
     let estado = estados[Math.floor(estados.length * Math.random())];

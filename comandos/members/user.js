@@ -2,12 +2,7 @@ const Discord = require("discord.js");
 
 module.exports = (client, message, args) => {
   message.delete();
-  if (message.channel.id !== "710657466475741265")
-    return message
-      .reply(
-        "**Opps.** Solo puedes usar este comando en <#710657466475741265>."
-      )
-      .then(m => m.delete({ timeout: 4000 }));
+  
 
   const online = client.emojis.cache.get("771218885936283670");
   const offline = client.emojis.cache.get("771218885440700436");
@@ -16,13 +11,13 @@ module.exports = (client, message, args) => {
   const stream = client.emojis.cache.get("771218881355579393");
 
   let estados = {
-    online: `${online} Conectado.`,
+    online: `${online} Online.`,
 
-    offline: `${offline} Desconectado.`,
+    offline: `${offline} Offline.`,
 
-    idle: `${idle} Ausente.`,
+    idle: `${idle} Absent.`,
 
-    dnd: `${dnd} No molestar.`,
+    dnd: `${dnd} Busy.`,
 
     stream: `${stream} trasmitiendo en vivo.`
   };

@@ -9,13 +9,12 @@ module.exports = (client, message, args) => {
    const saytext = args.slice(1).join(" ");	  
   const text = args.slice(0).join(" ");
   const embed = new Discord.MessageEmbed()
-    .setAuthor(`Mu Online Discord - ${args[0]}`, `https://i.imgur.com/QslgD5I.gif`)
+    .setAuthor(`Mowzie's Land - ${args[0]}`, `https://i.imgur.com/QslgD5I.gif`)
     .setColor("RANDOM")
     .setDescription(args.slice(1).join(" "))
-    .setThumbnail("https://i.imgur.com/7ZRavak.gif")
+    .setThumbnail("https://m.imgur.com/8j0p7Ki")
     .setTimestamp()
-    .setFooter(
-      "Mu Online Discord 2020. Derechos Reservados",
+    .setFooter("Mowzie's Land -Al Right Reserve",
       "https://i.imgur.com/NuU3tGp.gif"
     );
   message.channel.send(embed);

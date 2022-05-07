@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 
 module.exports = async (client, message, args) => {
-  message.delete();
 
   let perms = message.member.hasPermission("KICK_MEMBERS");
   if (!perms)

@@ -33,7 +33,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(
 				embedTitle: "Mu Discord Online - Sorteo",
                 timeRemaining: "Tiempo Restante: **{duration}**",
                 inviteToParticipate: "Reacciona 🎉 para participar",
-                winMessage: "Felicidades {winners}, eres el ganador de**{prize}**",
+                winMessage: "Felicidades {winners}, eres el ganador de **{prize}**",
                 embedFooter: "Tiempo del SORTEO.",
                 noWinner: "¡No ha habido ningun ganador!",
                 winners: "Ganador(ra/res/as)",

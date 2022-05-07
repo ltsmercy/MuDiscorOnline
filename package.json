@@ -14,6 +14,8 @@
     "desandro-matches-selector": "^2.0.2",
     "discord-giveaways": "^4.2.1",
     "discord.js": "^12.4.1",
+    "discord.js-commando": "^0.12.3",
+    "eris": "^0.15.1",
     "ev-emitter": "^1.1.1",
     "express": "^4.17.1",
     "fizzy-ui-utils": "^2.0.7",
@@ -21,8 +23,11 @@
     "isotope-layout": "^3.0.6",
     "jquery": "^3.5.1",
     "masonry-layout": "^4.2.2",
+    "meowdb": "^2.2.0",
     "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "ms": "^2.1.2",
+    "node-emoji-clock": "^0.1.0",
     "outlayer": "^2.1.1"
   }
 }

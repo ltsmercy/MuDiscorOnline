@@ -3,28 +3,30 @@
 const config = require("../config.json");
 const Discord = require("discord.js")
 
+
 module.exports = (client, message) => {
   //Evitar que mi bot responda a otros bots, incluyendose
   if (message.author.bot) return;
   //Evitar que mi bot responda a otros bots, incluyendose
 if (message.channel.type === "dm") {
-    let embed = new Discord.MessageEmbed()
+
+   const embed = new Discord.MessageEmbed()
       .setTimestamp()
-      .setTitle("✉ - Mensaje directo")
-      .addField(`Enviado por:`, `<@${message.author.id}>`)
+      .setTitle(`✉ - Private message`)
+      .addField(`Sent by:`, `${message.author} (${message.author.id})`)
       .setColor("RANDOM")
       .setThumbnail(message.author.displayAvatarURL())
-      .addField(`Mensaje: `, message.content)
-      .setFooter(`Alerta Mensaje Privado`)
+      .addField(`Message: `, message.content)
+      .setFooter(`Europe Origin 2`)
 	  .setTimestamp();
 
  client.channels.cache.get("771203391421939752").send(embed);
 }
+
+
   //Evitar que mi bot responda a otros bots, incluyendose
   if (message.author.bot) return;
 
-  if (message.channel.id == '770489981431971850') message.delete({timeout: 30000})
-  
   if (!message.content.startsWith(config.prefix)) return;
 
   //separamos el mensaje por cada espacio para poder manejar cada argumento

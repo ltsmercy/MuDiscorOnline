@@ -24,23 +24,23 @@ module.exports = async (client, message, args) => {
     .send(
       new Discord.MessageEmbed()
         .setAuthor(
-          `Hackeando a ${usuario.tag}`,
+          `Hacking to ${usuario.tag}`,
           "https://i.imgur.com/ii2vcyc.gif"
         )
         .setColor("RANDOM")
     )
     .then(m => {
       const hackeo = new Discord.MessageEmbed()
-        .setDescription(`Informacion de ${usuario}`)
+        .setDescription(`Information to ${usuario}`)
         .addField("> Ip: ", ip)
-        .addField("> Numero: ", numero)
-        .addField("> Correo: ", correo)
-        .addField("> Contraseña: ", contraseña)
+        .addField("> Number: ", numero)
+        .addField("> Email: ", correo)
+        .addField("> Password: ", contraseña)
         .setColor("RANDOM")
         .setThumbnail("https://i.imgur.com/7ZRavak.gif")
         .setTimestamp()
         .setFooter(
-          "Mu Online Discord 2020. Derechos Reservados",
+          "Europe Origin 2. All Right Reserve.",
           "https://i.imgur.com/NuU3tGp.gif"
         );
       setTimeout(() => {

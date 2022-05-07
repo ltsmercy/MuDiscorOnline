@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = (client, message, args) => {
   message.delete();
   const embed = new Discord.MessageEmbed()
-    .setAuthor("Muu Online Discord - Comunidad", "https://i.imgur.com/QslgD5I.gif")
+    .setAuthor("Mu Online Discord - Comunidad", "https://i.imgur.com/QslgD5I.gif")
     .addField("> Nuestra Website", "__**https://google.com//**__", false)
     .addField("> Nuestro Facebook", "__**https://www.facebook.com//**__", false)
     .addField("> Nuestro Instagram", "__**https://www.instagram.com//**__", false)
